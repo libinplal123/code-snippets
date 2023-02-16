@@ -19,6 +19,21 @@ $(document).ready(function() {
     });
   });
 });
+$(document).ready(function() {
+  $('#register-form').on('submit', function(event) {
+    event.preventDefault();
+    $.ajax({
+      url: '/register/',
+      type: 'POST',
+      data: $(this).serialize(),
+      success: function(response) {
+        if (response.success) {
+          window.location.href = '/';
+        }
+      }
+    });
+  });
+});
 Step 4: Add the JavaScript file to the template and include it in the HTML.
 
 Add the following line to the register.html template to include the register.js file:
