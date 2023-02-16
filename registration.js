@@ -19,3 +19,12 @@ $(document).ready(function() {
     });
   });
 });
+Step 4: Add the JavaScript file to the template and include it in the HTML.
+
+Add the following line to the register.html template to include the register.js file:
+
+php
+Copy code
+{% block extra_js %}
+  <script src="{% static 'registration/register.js' %}"></script>
+{% endblock %}
